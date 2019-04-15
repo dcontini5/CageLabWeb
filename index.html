@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+	
+		<title>CageLab</title>
+		<meta charset=utf-8>
+		<meta name="viewport" content="width=device.width,height=device.height, initial-scale=1">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="css/cagelab.css">
+		<link rel="stylesheet" href="css/jquery-ui.css">
+		<link rel="stylesheet" href="css/spectrum.css">
+		<script src="js/external/jquery.js"></script>
+		<script src="js/external/jquery-ui.js"></script>
+		<script src="js/external/jquery.dragbetter.js"></script>
+		<script src="js/external/object_hash.js"></script>
+		<script src="js/external/spectrum.js"></script>
+		
+		
+
+
+	</head>
+
+	<body>
+	
+			
+		<div class="btn-group" data-toggle="buttons" id ="interaction_mode_toolbar">
+			
+			<label>
+			  <input class="left_sidebar" type="radio" name="test" value="camera_controls" id="camera_controls" >
+			  <img src="icons/noneIconButton.png">
+			</label>
+
+			<label>
+			  <input class="left_sidebar" type="radio" name="test" value="select_handles" id="select_handles" >
+			  <img src="icons/selectIconButton.png">
+			</label>
+
+			<label>
+			  <input class="left_sidebar" type="radio" name="test" value="unselect_handles" id="unselect_handles" >
+			  <img src="icons/deselectIconButton.png">
+			</label>
+
+			<label>
+			  <input class="left_sidebar" type="radio" name="test" value="move_handles" id="move_handles" >
+			  <img src="icons/deformIconButton.png">
+			</label>
+			
+		</div>		
+			
+					
+		<div id = "canvas">
+			<div id="view"></div>
+			
+			<!--
+			<div id="scene">
+				
+				<div id="drag_drop_header">
+						
+					<span id="drag_drop_hint">Drop your Mesh here</span></br>
+					<span class="ui-icon ui-icon-folder-open" id="drag_drop_hint"></span>
+					
+				</div>
+				
+			</div>
+			-->
+			
+		</div>
+					
+		<!-- File Picker -->	
+			
+		<input type="file" id="file_picker">
+					
+		<div id = "settings">
+						
+			<div id = "canvas_settings">
+				
+				<p>Window Settings</p>
+				
+				<div class="row"> 
+						
+					<div id="fullscreen-check"> 
+							
+						<label for="background_color">Background Color</label>
+							<input type="text" id="background_color"/> <br>
+						<input type="checkbox" name="checkbox-1" id="fullscreen_checkbox">
+							<label for="fullscreen_checkbox">Full Screen</label> 
+					</div>
+						
+				</div>
+					
+			</div>	
+				
+			
+			<p>Triangle Mesh Settings</p>
+					
+			<div class="row">
+						
+					<button type="button" class="btn" id="load_mesh"><span class="ui-icon ui-icon-folder-open"></span> Load Mesh</button>
+					<button type="button" class="btn" id="save_mesh"><span class="ui-icon ui-icon-disk"></span> Save Mesh</button>
+					
+			</div>
+					
+			<div id="mesh_menu">
+				<div class="row">
+					
+					<div class="settings_box" id="mesh_rendering">
+						
+						<p>Rendering</p>
+						<fieldset  data-role="controlgroup" id="mesh_rendering">
+								
+							<input type="checkbox" class="setting_panels" name="checkbox-1" id="draw_check">
+							<label class="label_for_setting" for="draw_check">Draw</label><br>
+							<input type="radio" class="setting_panels" name="radio-1" id="draw_points">
+							<label class="label_for_setting" for="draw_points">Points</label><br>
+							<input type="radio" class="setting_panels" name="radio-1" id="draw_flat">
+							<label class="label_for_setting" for="draw_flat">Flat</label><br>
+							<input type="radio" class="setting_panels" name="radio-1" id="draw_smooth">
+							<label class="label_for_setting" for="draw_smooth">Smooth</label>
+								
+								
+						</fieldset>
+							
+					</div>
+						
+					
+						
+					
+					<div class="settings_box" id="mesh_coluration">
+							
+						<p>Coluration</p>
+						<fieldset  data-role="controlgroup">
+								
+								
+							<input type="radio" class="setting_panels" name="radio-2" id="vertex_color">
+							<label class="label_for_setting" for="vertex_color">On Vertex</label><br>
+							<label class="label_for_setting" for="set_vertex_color">Set Vertex Color</label>
+							<input type="text" id="set_vertex_color"/> <br>
+							<input type="radio" class="setting_panels" name="radio-2" id="tris_color">
+							<label class="label_for_setting" for="tris_color">On Tris</label><br>
+							<label for="set_tris_color">Set Tris Color</label>
+							<input type="text" id="set_tris_color"/> <br>
+							<input type="radio" class="setting_panels" name="radio-2" id="heat_map">
+							<label class="label_for_setting" for="heat_map">Heat Map</label>
+								
+								
+						</fieldset>
+							
+						
+					</div>
+				
+				</div>
+				
+					
+				<div id="mesh_wireframe">
+						
+							
+					<input type="checkbox" class="setting_panels" name="checkbox-1" id="toggle_wireframe">
+					<label class="label_for_setting" for="toggle_wireframe">Wireframe</label>
+					<input type="text" id="mesh_wireframe_color"/>	
+					<div class="slider" id="wireframe_slider"></div>
+						
+							
+							
+						
+				</div>
+					
+			</div>
+					
+			<p>Cage Settings</p>
+					
+			<div class="row">
+						
+				<button type="button" class="btn" id="load_cage"><span class="ui-icon ui-icon-folder-open"></span> Load Cage</button>
+				<button type="button" class="btn" id="save_cage"><span class="ui-icon ui-icon-disk"></span> Save Cage</button>
+						
+			</div>
+				
+				
+			<div id="cage_settings">
+					
+					
+					
+				<div class="row">
+					
+					<div class="settings_box" id="sphere_drawer">
+						
+						<p>Rendering</p>
+						<fieldset  data-role="controlgroup">
+							<input type="checkbox" class="setting_panels"3 name="checkbox-1" id="toggle_cage">
+							<label class="label_for_setting" for="toggle_cage">Draw</label>
+						</fieldset>
+				
+					</div>
+						
+					<div class="settings_box" id="sphere_slider">
+						
+						<p>Sphere Size</p>
+						
+						<div class="slider" id="sphere_size_slider">
+						</div>
+						
+					
+					</div>
+					
+					
+				
+				</div>
+				
+				<div class="row" id="cage_wire_col">
+					<label for="cage_wireframe_color">Set Wireframe Color </label>
+					<input type="text" id="cage_wireframe_color"/>
+				</div>
+				
+				<div class="row">
+				
+					<div class="settings_box" id="coord_settings">
+					
+						<p>Coordinates</p>
+						
+						<button type="button" class="btn" id="compute_coords"> Compute all Coordinates</button>
+						<fieldset  data-role="controlgroup">
+								
+							
+							<input type="radio" class="setting_panels" name="radio-3" id="no_cords">
+							<label class="label_for_setting" for="no_cords">None</label>
+							<input type="radio" class="setting_panels" name="radio-3" id="mcv_cords">
+							<label class="label_for_setting" for="mcv_cords">MVC</label>
+							<input type="radio" class="setting_panels" name="radio-3" id="green_coords">
+							<label class="label_for_setting" for="green_coords">Green</label>
+						
+						</fieldset>
+						
+					</div>
+					
+				
+				</div>
+				
+			</div>
+			
+		</div>
+		
+				
+		  <!-- Emscripten module -->
+		<script src="js/module.js"></script>
+	    <!-- Emscripten compiled cpp code -->
+		<script async src="js/generated/cagelab_asm.js"></script>
+		<!-- Cagelab -->
+		<script src="js/ui.js"></script>
+		<script src="js/external/three.js"></script>
+		<script src="js/external/loaders/OBJLoader.js"></script>
+		<script src="js/external/loaders/LoaderSupport.js"></script>
+		<script src="js/external/loaders/OBJLoader2.js"></script>
+		<script src="js/external/controls/TrackballControls.js"></script>
+		<script src="js/external/materials/THREE.MeshLine.js"></script>	
+		<script src="js/external/materials/LineSegmentsGeometry.js"></script>		
+		<script src="js/external/materials/LineGeometry.js"></script>		
+		<script src="js/external/materials/WireframeGeometry2.js"></script>			
+		<script src="js/external/materials/LineMaterial.js"></script>		
+		<script src="js/external/materials/Wireframe.js"></script>	
+		<script src="js/external/FileSaver.js"></script>	
+		<script src="js/cagelab.js"></script>
+		
+		<script type="text/javascript">
+        window.onload = function () {
+			var app = new CageLab.App(document.getElementById('view'));
+            app.animate();
+        }
+    </script>
+
+		
+		
+	</body>
+
+
+</html>

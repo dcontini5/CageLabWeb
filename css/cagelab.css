@@ -1,0 +1,255 @@
+
+
+body{
+		
+	background-color: #efebe7; 
+		
+}
+
+/*
+* {
+    background-color: #efebe7;
+}
+*/
+
+
+.left_sidebar { 
+
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  
+}
+
+
+img{
+	
+	height: 40px;
+	width: 40px;
+	
+}
+
+.btn, .left_sidebar + img{
+	
+	border: solid 1px #c5c5c5;
+	border-radius: 3px;
+	margin-bottom: 3px; 
+	border-color: #aba8a5;
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	background-color: #f6f5f3;
+	cursor: pointer;
+	
+	
+}
+
+.sp-replacer.sp-disabled{
+	
+	opacity: 0.4;
+	cursor: not-allowed !important;
+	
+}
+
+.btn:active{
+	
+	background-color: #d8d6d2;
+	color: #565656;
+    
+}
+
+.btn.active, .left_sidebar:checked + img{
+	
+	background-color: #d8d6d2;
+	color: #565656;
+    
+}
+
+.btn:disabled, .left_sidebar:disabled + img, .setting_panels:disabled + .label_for_setting{
+	
+	opacity: 0.4;
+	cursor: not-allowed;
+	
+}
+
+.jscolor{
+	
+	border: solid 1px #c5c5c5;
+	border-radius: 3px;
+	margin-bottom: 3px; 
+	border-color: #aba8a5;
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	cursor: pointer;
+	
+	
+	
+}
+
+#fullscreen-check{
+	
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 4px;
+	
+}
+
+#interaction_mode_toolbar{
+	
+	width: 4%;
+	float: left;
+	overflow-x: hidden;
+	padding-left: 4px;
+	padding-top: 4px;
+	
+}
+
+#canvas{
+	
+	display: flex;
+	position: fixed;
+	width: 77%;
+	height: 100%;
+	margin-left: 3%;
+	
+	
+}
+
+#settings{
+	
+	position: fixed;
+	width: 22%;
+	margin-left: 80%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	
+	
+}
+
+.row{
+	
+	display: flex;
+	margin-left: 3%;
+	
+}
+
+fieldset{
+	
+	border-color: #f6f5f3;
+	border: 1px;
+	
+}
+
+
+.settings_box{
+	
+	margin-top: 1%;
+	border-style: solid;
+	border-color: #aba8a5;
+	border-width: 1px;
+	margin-right: 1%;
+	padding-left: 1%;
+	
+}
+
+#mesh_coluration{
+	
+	width: 56%;
+	
+}
+
+
+.slider{
+	
+	margin-left: 3%;
+	margin-right: 5%;
+	margin-top: 3%;
+	
+}
+
+
+#mesh_wireframe{
+	
+	padding-top: 2%;
+	padding-bottom: 2%;
+	padding-left: 1%;
+	margin-top: 1%;
+	border-style: solid;
+	border-color: #aba8a5;
+	border-width: 1px;
+	margin-left: 3%;
+	margin-right: 14%;
+	
+	
+}
+
+#sphere_slider{
+	
+	width: 56%;
+	
+	
+}
+
+#sphere_drawer{
+	
+	width: 25%;
+	
+}
+
+#cage_wire_col{
+	
+	margin-top: 5px;
+	margin-bottom: 5px;
+	
+}
+
+#coord_settings{
+	
+	width:83%
+	
+}
+
+#drag_drop_header{
+	
+	display: relative;
+	text-align: center;
+	margin: auto;
+	margin-top: 400px;
+	border: 1px solid #aba8a5;
+	border-radius: 25px;
+	width: 30%;
+	height: 100px;
+	padding-top:50px;
+	
+	
+}
+
+#drag_drop_hint{
+	
+	font-size: 24px;
+	font-style: #f6f5f3;
+	
+	
+}
+
+
+
+#view{
+	
+	width: 100%;
+	margin-bottom: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 5px;
+
+}
+
+#file_picker{
+	
+	display:none;
+	
+}
